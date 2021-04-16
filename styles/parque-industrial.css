@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {
@@ -8,25 +8,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-h1,
-h2,
-h3,
-hr,
-p {
-  margin: 0;
-}
-
-h2,
-h3 {
-  color: var(--main-gray-text);
-}
-
+/* ESTILOS GLOBALES */
 h2 {
   font-size: 40px;
   font-weight: 600;
 }
 
 h3 {
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -34,28 +23,70 @@ hr {
   margin: 0;
 }
 
-.content {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+p {
+  font-size: 14px;
+}
+
+/**** PARQUE INDUSTRIAL ****/
+body.page-id-333 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body.page-id-333 section {
+  padding: 0;
+}
+
+body.page-id-333 h1,
+body.page-id-333 h3,
+body.page-id-333 hr,
+body.page-id-333 p {
+  margin: 0;
+}
+
+body.page-id-333 h2 {
+  margin-bottom: 20px;
+  color: var(--main-gray-text);
+}
+
+/*Sección de Ubicación*/
+.location {
+  padding: 100px 0 120px !important;
 }
 
 .location__content-header {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.location__content-header::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 50px;
+  height: 5px;
+  background-image: linear-gradient(
+    45deg,
+    var(--main-blue) 15%,
+    var(--main-green) 65%
+  );
 }
 
 .location__main-content {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .location__img-wrapper {
   width: 40%;
+  height: fit-content;
   box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.6);
 }
 
-.location__img-wrapper>img {
+.location__img-wrapper > img {
   width: 100%;
 }
 
@@ -68,11 +99,12 @@ hr {
 }
 
 .location__content__item__header {
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
 }
 
-.location__content__item__header>i {
+.location__content__item__header > i {
   margin-right: 10px;
   font-size: 2rem;
   background: linear-gradient(45deg, var(--main-blue), var(--main-green));
@@ -81,18 +113,19 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+/*Sección de Beneficios*/
 .benefits {
+  padding: 100px 0 120px !important;
   display: flex;
   flex-flow: column;
-  padding: 0 0 100px 0;
 }
 
-.benefits>div>h3 {
+.benefits > div > h3 {
   position: relative;
   margin-bottom: 30px;
 }
 
-.benefits>div>h3::after {
+.benefits > div > h3::after {
   content: "";
   position: absolute;
   left: 0;
@@ -102,9 +135,9 @@ hr {
   background-image: linear-gradient(45deg, var(--main-blue), var(--main-green));
 }
 
-.benefits div>h2 {
+.benefits div > h2 {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   font-size: 2.5rem;
   font-weight: 600;
 }
@@ -114,31 +147,40 @@ hr {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 40px;
   row-gap: 30px;
+  align-items: center;
 }
 
-.benefits__item>div {
+.benefits__item {
+  position: relative;
   display: flex;
+  flex-flow: column;
+  padding-left: 10px;
 }
 
-.benefits__item>i {
+.benefits__item::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  left: 0;
+  background-image: linear-gradient(45deg, var(--main-green), var(--main-blue));
+}
+
+.benefits__item i {
+  width: fit-content;
   margin-bottom: 15px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: linear-gradient(45deg, var(--main-blue), var(--main-green));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.benefits__item>div {
+.benefits__item > div {
   margin-bottom: 5px;
 }
 
-.benefits__item>div>hr {
-  height: 20px;
-  margin-right: 10px;
-  border-left-color: var(--main-blue);
-}
-
-.benefits__item>div>p {
+.benefits__item__title {
+  margin-bottom: 5px !important;
   font-weight: 600;
 }
